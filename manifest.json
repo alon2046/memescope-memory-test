@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "graduation by kanye west",
+    "version": "1.0",
+    "description": "gyattttt",
+    "permissions": [
+        "notifications",
+        "storage",
+        "windows"
+    ],
+    "host_permissions": [
+        "https://photon-sol.tinyastro.io/*",
+        "https://frontend-api.pump.fun/*",
+        "https://api.telegram.org/*"
+    ],
+    "action": {
+        "default_icon": "icon48.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://photon-sol.tinyastro.io/en/memescope*"],
+            "js": ["content.js"]
+        }
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "web_accessible_resources": [{
+        "resources": ["notification.mp3", "icon48.png", "logger.html"],
+        "matches": ["https://photon-sol.tinyastro.io/*"]
+    }]
+}
